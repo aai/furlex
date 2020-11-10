@@ -4,8 +4,8 @@ defmodule Furlex.Mixfile do
   def project do
     [
       app: :furlex,
-      version: "0.4.3",
-      elixir: "~> 1.4",
+      version: "0.5.0",
+      elixir: "~> 1.11.2",
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
       description: description(),
@@ -33,15 +33,15 @@ defmodule Furlex.Mixfile do
 
   defp deps do
     [
-      {:floki, "~> 0.17.0"},
+      {:floki, "~> 0.29.0"},
       {:httpoison, "~> 1.5"},
       {:jason, "~> 1.0", optional: true},
       {:plug_cowboy, "~> 1.0 or ~> 2.0"},
 
-      {:benchee, "~> 0.13", only: :dev},
-      {:ex_doc, "~> 0.19", only: :dev, runtime: false},
+      {:benchee, "~> 1.0", only: :dev},
+      {:ex_doc, "~> 0.23.0", only: :dev, runtime: false},
 
-      {:bypass, "~> 0.8", only: :test},
+      {:bypass, "~> 2.0", only: :test},
     ]
   end
 

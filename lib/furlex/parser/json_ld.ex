@@ -6,6 +6,7 @@ defmodule Furlex.Parser.JsonLD do
   @spec parse(String.t) :: nil | {:ok, List.t}
   def parse(html) do
     meta = "script[type=\"application/ld+json\"]"
+    {:ok, html} = Floki.parse_document(html)
 
     case Floki.find(html, meta) do
       nil      ->

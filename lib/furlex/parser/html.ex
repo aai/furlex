@@ -5,6 +5,7 @@ defmodule Furlex.Parser.HTML do
 
   @spec parse(String.t) :: nil | {:ok, Map.t}
   def parse(html) do
+    {:ok, html} = Floki.parse_document(html)
     case Floki.find(html, "meta[name]") do
       nil      -> {:ok, %{}}
       elements ->
